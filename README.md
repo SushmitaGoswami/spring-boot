@@ -36,3 +36,20 @@ Representational state transfer - It is an architectural style which guides the 
 1. Request/Response - JSON/XML/Any standard
 2. Transport - HTTP
 3. Service Definition - Nothing fixed, but Swagger/WADL is used for this purpose.
+
+Each api is represented as an API. Following are some examples
+1. GET user - /user/{id}
+2. GET all posts of an user - /user/{id}/posts
+
+
+## How does dispatcher servlet works?
+Dispatcher servlet specifies the root of the application It maintains the mapping between resource and controller. It registers all the jars which it finds in the classpath.
+Whenever, dispatcher servlet receives any request, it finds the controller mapping of the corresponding url and forwards the request based on that. Now, as @ResponseBody annotation is attached to the @RestController class, so when the response is returned to the client, it is converted into specific format dependending on the mapper class found in the classpath and registered.
+
+## Some checkpoints of rest api
+1. Each API should have proper return code.
+2. Each API must have some fallback.
+3. If possible, it should send some location/path/uri to the next API to be used in the response header.
+4. Each API must return a common exception structure.
+5. Whenever some classes needs to be shared among all the controller implementation, it needs to be annotated with @ControllerAdvice.
+6. Each API should have ability to validate it's parameters.
