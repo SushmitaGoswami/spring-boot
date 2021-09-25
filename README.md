@@ -53,3 +53,5 @@ Whenever, dispatcher servlet receives any request, it finds the controller mappi
 4. Each API must return a common exception structure.
 5. Whenever some classes needs to be shared among all the controller implementation, it needs to be annotated with @ControllerAdvice.
 6. Each API should have ability to validate it's parameters.
+7. Each API should have proper documentation based on openAPI specification.
+8. Each service must expose specific actuator resources like health check and some visualization of API (using something like HAL explorer). 
