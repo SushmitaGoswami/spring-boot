@@ -76,9 +76,9 @@ Whenever, dispatcher servlet receives any request, it finds the controller mappi
 2. Configuration Management - Multiple environment with multiple instances - Spring Cloud Config Service
 3. Dynamic Load handling - Scaling
 4. Load Balancing - distribution 
-   a. Naming or Discovery Service - Eureka
-   b. Client Side Load Balancing - Ribbon
-   c. REST Client with the naming service set up - Feign
+   - Naming or Discovery Service - Eureka
+   - Client Side Load Balancing - Ribbon
+   - REST Client - Feign
 5. Visibility of each service - Logging/Tracking of a request & Monitoring
    a. ZIPKIN Distributed Tracing mechanism
    b. Netflix API Zul Gateway.
