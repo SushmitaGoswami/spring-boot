@@ -77,18 +77,29 @@ Whenever, dispatcher servlet receives any request, it finds the controller mappi
 3. Dynamic Load handling - Scaling
 4. Load Balancing - distribution 
    - Naming or Discovery Service - Eureka
-   - Client Side Load Balancing - Ribbon
+   - Client Side Load Balancing - Ribbon/ Spring Cloud Load Balancer
    - REST Client - Feign
 5. Visibility of each service - Logging/Tracking of a request & Monitoring
-   a. ZIPKIN Distributed Tracing mechanism
-   b. Netflix API Zul Gateway.
+   a. ZIPKIN Distributed Tracing mechanism - Spring Cloud Sleuth (to assign a specific id to a request)
+   b. Netflix API Zuul Gateway/ Spring Cloud API Gateway
 6. CAP Principal 
-7. Fault Tolearance - Hystrix
-8. Security
-9. Analytics 
+7. Fault Tolearance - Hystrix/Resilience4j
+8. API Gateway - Implements features common across micro-services.
+   - Authorization, Authentication, Security
+   - Rate Limiting
+   - Service Aggregation
+   - Fault Tolerance
+   - Logging
+9. Spring Cloud Bus : 
+   /actuator/refresh - to reflect the change in the configuration without restarting the microservices. But here for each instance of that microservice, this url needs to be fired.
+   /bus/refresh : All the running instance of each micro-service will register themselves to the Spring Cloud Bus and when refresh is called on any instance, it will call the refresh on other instances too.
+10. Security
+11. Analytics 
  
 ## Advantages of microservice archiecture
 1. Make the adaptation of new technology easy - Tech stack of microservices can be completely different
 2. Dynamic Scaling
 3. Faster Developement and Release cycle. 
 4. Easy deployment. 
+
+ 
