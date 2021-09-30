@@ -83,7 +83,14 @@ Whenever, dispatcher servlet receives any request, it finds the controller mappi
    a. ZIPKIN Distributed Tracing mechanism - Spring Cloud Sleuth (to assign a specific id to a request)
    b. Netflix API Zuul Gateway/ Spring Cloud API Gateway
 6. CAP Principal 
-7. Fault Tolearance - Hystrix/Resilience4j
+7. Fault Tolearance/ Circuit breaking
+   - Hystrix
+   - Resilience4j
+   Solves following problems
+   1. Retries 
+   2. Circuit Breaker facilities
+   3. Rate Limiting and No of concurrent calls allowed (BulkHead)
+   4. FallBack Response
 8. API Gateway - Implements features common across micro-services.
    - Authorization, Authentication, Security
    - Rate Limiting
